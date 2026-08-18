@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- publicado via GitHub -->
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -8,19 +7,809 @@
 <meta name="description" content="Reforma em geral, pisos, demolição, forro de gesso, pintura, bancadas, móveis planejados, envidraçamento de box e sacada, ar-condicionado e aquecedores. Orçamento rápido pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<style>
+/* ===========================================
+   Soares Bertazzi Reformas & Acabamentos
+   =========================================== */
+
+:root {
+  --navy: #1c2b3a;
+  --navy-dark: #121e29;
+  --terracotta: #cc6a3c;
+  --terracotta-dark: #b3572d;
+  --cream: #f7f4ef;
+  --white: #ffffff;
+  --gray-text: #5a6472;
+  --border-soft: #e6e1d8;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1ebe5a;
+  --shadow: 0 10px 30px rgba(28, 43, 58, 0.08);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  color: var(--navy);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header.site-header {
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+.logo span {
+  display: block;
+  color: var(--terracotta);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+nav.main-nav a {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  background: rgba(255,255,255,0.1);
+}
+
+nav.main-nav a.nav-cta {
+  background: var(--whatsapp);
+  color: var(--white);
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+nav.main-nav a.nav-cta:hover {
+  background: var(--whatsapp-dark);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+@media (max-width: 780px) {
+  nav.main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 16px 16px;
+    gap: 4px;
+  }
+  nav.main-nav.open {
+    display: flex;
+  }
+  nav.main-nav a {
+    padding: 12px 14px;
+  }
+  nav.main-nav a.nav-cta {
+    margin-left: 0;
+    text-align: center;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+  color: var(--white);
+  padding: 84px 24px 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(204,106,60,0.25) 0%, rgba(204,106,60,0) 70%);
+}
+
+.hero-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+
+.google-badge-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 300px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 14px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: background 0.15s ease;
+}
+
+.google-badge-hero:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.google-badge-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
+}
+
+.google-badge-icon-mini {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-google 2.4s infinite;
+}
+
+.google-badge-stars-mini {
+  color: #f5a623;
+  letter-spacing: 1px;
+}
+
+.google-badge-quote {
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.75);
+}
+
+.google-badge-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--terracotta);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-weight: 700;
+  max-width: 720px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero p.lead {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.82);
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.trust-line {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.78);
+}
+
+.trust-line span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-line .dot {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+}
+
+.service-area {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.62);
+  max-width: 640px;
+}
+
+.service-area strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 2px solid transparent;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: var(--white);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background: var(--whatsapp-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.btn-outline:hover {
+  border-color: var(--white);
+}
+
+section {
+  padding: 76px 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 48px;
+}
+
+.section-head .eyebrow {
+  color: var(--terracotta-dark);
+}
+
+.section-head h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--navy);
+}
+
+.section-head p {
+  color: var(--gray-text);
+  font-size: 1.02rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--terracotta);
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-card .num {
+  color: var(--terracotta);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+
+.service-card p {
+  color: var(--gray-text);
+  font-size: 0.95rem;
+}
+
+.why-strip {
+  background: var(--white);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 28px;
+  text-align: center;
+}
+
+.why-grid .item strong {
+  display: block;
+  font-size: 1.9rem;
+  color: var(--terracotta);
+  margin-bottom: 6px;
+}
+
+.why-grid .item span {
+  color: var(--gray-text);
+  font-size: 0.92rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.video-placeholder {
+  background: var(--navy);
+  border-radius: var(--radius);
+  aspect-ratio: 9 / 16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.video-placeholder .play-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.video-placeholder .play-icon::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid var(--white);
+  margin-left: 4px;
+}
+
+.video-placeholder .label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.video-embed {
+  border-radius: var(--radius);
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--navy);
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-caption {
+  text-align: center;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.plan-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--border-soft);
+  position: relative;
+}
+
+.plan-card .plan-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--terracotta-dark);
+  background: rgba(204,106,60,0.1);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.plan-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.plan-card p {
+  color: var(--gray-text);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.plan-card.premium {
+  background: linear-gradient(150deg, var(--navy) 0%, var(--navy-dark) 100%);
+  border-color: var(--navy);
+}
+
+.plan-card.premium .plan-tag {
+  background: rgba(255,255,255,0.14);
+  color: var(--terracotta);
+}
+
+.plan-card.premium h3,
+.plan-card.premium p {
+  color: var(--white);
+}
+
+.plan-card.premium p {
+  color: rgba(255,255,255,0.82);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: var(--terracotta);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(204,106,60,0.4);
+}
+
+/* ---------- Avaliações Google ---------- */
+.google-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.google-review-card {
+  background: var(--cream);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.google-review-stars {
+  color: #f5a623;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.google-review-text {
+  color: var(--navy);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.google-review-author {
+  color: var(--gray-text);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.google-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.google-badge {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-google 2.4s infinite;
+}
+
+@keyframes pulse-google {
+  0% { box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.45); }
+  70% { box-shadow: 0 0 0 14px rgba(66, 133, 244, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(66, 133, 244, 0); }
+}
+
+.project-form-section {
+  background: var(--white);
+  border-top: 1px solid var(--border-soft);
+}
+
+.project-form-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px 26px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.project-form-card .form-note {
+  background: rgba(37,211,102,0.1);
+  border: 1px solid rgba(37,211,102,0.3);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  color: var(--navy);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.form-grid label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--navy);
+  background: var(--white);
+}
+
+.form-grid textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+.form-submit-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cta-band {
+  background: linear-gradient(120deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.cta-band h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin-bottom: 14px;
+}
+
+.cta-band p {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 30px;
+}
+
+.cta-band .btn-whatsapp {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+footer.site-footer {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 40px 24px;
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+footer.site-footer .foot-name {
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 999;
+  background: var(--whatsapp);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  animation: pulse-wa 2.4s infinite;
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--white);
+}
+
+@keyframes pulse-wa {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+</style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="logo">Soares Bertazzi<span>Reformas &amp; Acabamentos</span></a>
+    <a href="#" class="logo">Soares Bertazzi<span>Reformas &amp; Acabamentos</span></a>
     <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Abrir menu">&#9776;</button>
     <nav class="main-nav">
-      <a href="index.html" class="active">Início</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
+      <a href="#" class="active">Início</a>
+      <a href="#servicos">Serviços</a>
       <a href="https://wa.me/5511963434558?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." class="nav-cta" target="_blank" rel="noopener">WhatsApp</a>
     </nav>
   </div>
@@ -29,6 +818,22 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Reforma em geral</div>
+    <a href="https://maps.app.goo.gl/TrZSW4YBFrJRS4ra7?g_st=ac" target="_blank" rel="noopener" class="google-badge-hero">
+      <span class="google-badge-top">
+        <span class="google-badge-icon-mini">
+          <svg viewBox="0 0 48 48" width="14" height="14">
+            <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+            <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+            <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+            <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+          </svg>
+        </span>
+        <span class="google-badge-stars-mini">★★★★★</span>
+        <span>5.0 no Google</span>
+      </span>
+      <p class="google-badge-quote">&ldquo;Ótimo profissional, já fez 2 projetos pra mim&hellip;&rdquo;</p>
+      <span class="google-badge-link">Confira as avaliações dos nossos clientes →</span>
+    </a>
     <h1>Do piso ao acabamento final, sua reforma com quem entende do assunto.</h1>
     <p class="lead">A Soares Bertazzi cuida de tudo: demolição, pisos, forro, pintura, móveis planejados, box, ar-condicionado e muito mais. Orçamento rápido, direto no WhatsApp.</p>
     <div class="btn-row">
@@ -36,7 +841,7 @@
         <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5C11 9.6 10.5 8.3 10.3 8c-.2-.4-.4-.3-.6-.3h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15.1 3.5 13.6 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/></svg>
         Peça seu orçamento grátis agora
       </a>
-      <a href="servicos.html" class="btn btn-outline">Ver serviços</a>
+      <a href="#servicos" class="btn btn-outline">Ver serviços</a>
     </div>
     <div class="trust-line">
       <span><span class="dot"></span>Respondemos em poucos minutos</span>
@@ -114,7 +919,40 @@
   </div>
 </section>
 
-<section>
+<section style="background:var(--white); border-top:1px solid var(--border-soft);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Avaliações reais</div>
+      <h2>O que dizem no Google</h2>
+      <p>Avaliações verificadas de clientes reais, direto do nosso perfil no Google.</p>
+    </div>
+    <div class="google-reviews-grid">
+      <div class="google-review-card">
+        <div class="google-review-stars">★★★★★</div>
+        <p class="google-review-text">&ldquo;Ótimo profissional, já fez 2 projetos pra mim e irá começar o 3º em breve, muito honesto e profissional&rdquo;</p>
+        <span class="google-review-author">— Leonardo Tadeu da Silva</span>
+      </div>
+      <div class="google-review-card">
+        <div class="google-review-stars">★★★★★</div>
+        <p class="google-review-text">&ldquo;Serviço honesto! Entrega o que promete!&rdquo;</p>
+        <span class="google-review-author">— Juliana Delpoio</span>
+      </div>
+    </div>
+    <div class="google-cta">
+      <span class="google-badge">
+        <svg viewBox="0 0 48 48" width="26" height="26">
+          <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+          <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+          <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+          <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        </svg>
+      </span>
+      <a href="https://maps.app.goo.gl/TrZSW4YBFrJRS4ra7?g_st=ac" target="_blank" rel="noopener" class="btn btn-outline">Confira as avaliações no Google</a>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">O que fazemos</div>
@@ -153,9 +991,6 @@
         <p>Instalação completa, com equipe qualificada e segurança.</p>
       </div>
     </div>
-    <div style="text-align:center; margin-top:40px;">
-      <a href="servicos.html" class="btn btn-outline" style="color:var(--navy); border-color:var(--navy);">Ver todos os serviços</a>
-    </div>
   </div>
 </section>
 
@@ -183,7 +1018,7 @@
   </div>
 </section>
 
-<section style="background:var(--white); border-top:1px solid var(--border-soft);">
+<section id="garantia" style="background:var(--white); border-top:1px solid var(--border-soft);">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">Garantia</div>
